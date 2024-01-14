@@ -1,26 +1,46 @@
 package EXAMEN_TEMA4;
 
 public class Jugador {
-    private String jugador;
-    private int goles;
+    private String nombre;
     private int edad;
+    private int golesMarcados;
 
-    public Jugador(String jugador, int goles, int edad) {
-        this.jugador = jugador;
-        this.goles = 0;
+    public Jugador(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.golesMarcados = 0;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public Jugador(String jugador, int goles) {
-
+    public int getGolesMarcados() {
+        return golesMarcados;
     }
 
-    void anadirgoles(){
-        this.goles++;
+    public void setGolesMarcados(int golesMarcados) {
+        this.golesMarcados = golesMarcados;
     }
 
-    int obtenerGoles(){
-        return this.goles;
+    public void agregarGol(){
+        golesMarcados++;
+    }
+
+    public int totalGolesMarcadosJugadores(){
+        return golesMarcados;
     }
 
 }

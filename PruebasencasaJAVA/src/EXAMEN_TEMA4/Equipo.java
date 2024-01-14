@@ -1,34 +1,60 @@
 package EXAMEN_TEMA4;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Equipo {
     private String pais;
-    private String Entrenador;
-    ArrayList<Jugador> Jugadores;
+    private String entrenador;
+   List<Jugador> Jugadores;
 
     public Equipo(String pais, String entrenador) {
         this.pais = pais;
-        this.Entrenador = entrenador;
+        this.entrenador = entrenador;
         this.Jugadores = new ArrayList<>();
     }
-    void anadirJugador(Jugador jugador){
-        this.Jugadores.add(jugador);
+
+    public String getPais() {
+        return pais;
     }
 
-    void eliminarJugador(Jugador jugador) {
-        this.Jugadores.remove(jugador);
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    String obtenerEntrenador() {
-        return this.Entrenador;
+    public String getEntrenador() {
+        return entrenador;
     }
 
-    int obtenerGoles() {
-        int totalGoles = 0;
-        for (Jugador jugador : this.Jugadores) {
-            totalGoles += jugador.obtenerGoles();
+    public void setEntrenador(String entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    public List<Jugador> getJugadores() {
+        return Jugadores;
+    }
+
+    public void setJugadores(List<Jugador> jugadores) {
+        Jugadores = jugadores;
+    }
+
+    public void anadirJugador(Jugador jugador){
+        Jugadores.add(jugador);
+    }
+
+    public void eliminarJugador(Jugador jugador){
+        Jugadores.remove(jugador);
+    }
+
+    public String obtenerEntrenador(){
+        return entrenador;
+    }
+
+    public int totalGolesMarcadosEquipo(){
+        int totalgoles = 0;
+        for (Jugador jugador : Jugadores){
+            totalgoles += jugador.totalGolesMarcadosJugadores();
         }
-        return totalGoles;
+        return totalgoles;
     }
 }
